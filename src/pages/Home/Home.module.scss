@@ -1,3 +1,162 @@
+@use "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+
 .container {
   font-family: "Pretendard", sans-serif;
+}
+
+.introduction-banner {
+  height: 211px;
+  background-image: image-set(
+    url("../../../public/assets/images/home/banner.png") 1x,
+    url("../../../public/assets/images/home/banner@2x.png") 2x,
+    url("../../../public/assets/images/home/banner@3x.png") 3x
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include respond-to(sm) {
+    height: 432px;
+  }
+  @include respond-to(lg) {
+    height: 576px;
+  }
+  @include respond-to(xl) {
+    height: 720px;
+  }
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 810px;
+  }
+}
+
+.introduction {
+  position: relative;
+  background-color: variables.$black-000;
+  padding: 20px 12px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+
+  @include respond-to(sm) {
+    padding: 40px 24px;
+  }
+
+  @include respond-to(lg) {
+    padding: 80px 32px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  @include respond-to(xl) {
+    padding: 138px 50px;
+  }
+
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__text-wrap {
+    color: variables.$white-fff;
+
+    @include respond-to(lg) {
+      grid-column: span 7 / span 7;
+    }
+    @include respond-to(xl) {
+      grid-column: span 9 / span 9;
+    }
+    @include respond-to(xl) {
+      grid-column: span 8 / span 8;
+    }
+
+    &__main {
+      font-size: 24px;
+      line-height: 1.25;
+      margin-bottom: 20px;
+
+      @include respond-to(sm) {
+        font-size: 32px;
+        max-width: 600px;
+        margin: 0 auto 42px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+        max-width: 1200px;
+      }
+      @include respond-to(xl) {
+        font-size: 64px;
+      }
+    }
+    &__sub {
+      font-size: 14px;
+      line-height: 1.6;
+      color: variables.$gray-a1a;
+
+      @include respond-to(sm) {
+        font-size: 16px;
+        max-width: 350px;
+        margin: 0 auto;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+        max-width: 350px;
+        margin: 0 0 0 50px;
+      }
+      @include respond-to(xl) {
+        font-size: 20px;
+        max-width: 400px;
+        margin: 0 0 0 100px;
+      }
+    }
+  }
+
+  &__img-left {
+    position: absolute;
+    width: 193px;
+    height: 198px;
+
+    display: none;
+
+    @include respond-to(sm) {
+      width: 220px;
+      height: 226px;
+    }
+    @include respond-to(lg) {
+      display: block;
+      bottom: 150px;
+      right: 310px;
+    }
+    @include respond-to(xl) {
+      width: 308px;
+      height: 316px;
+      bottom: 200px;
+      right: 400px;
+    }
+  }
+
+  &__img-right {
+    position: absolute;
+    width: 197.5px;
+    height: 339px;
+
+    display: none;
+
+    @include respond-to(sm) {
+      width: 225px;
+      height: 388px;
+    }
+
+    @include respond-to(lg) {
+      display: block;
+      bottom: 50px;
+      right: 60px;
+    }
+    @include respond-to(xl) {
+      width: 316px;
+      height: 542px;
+      bottom: 50px;
+      right: 60px;
+    }
+  }
 }
