@@ -1,0 +1,48 @@
+@use "../../styles/variables.scss";
+
+.language-select-wrap {
+  position: relative;
+  color: variables.$white-fff;
+  width: fit-content;
+}
+
+.language-icon {
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  background-color: variables.$white-fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  &__item {
+    color: variables.$black-000;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(variables.$black-000, 0.5);
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__item:hover {
+    background-color: rgba(variables.$black-000, 0.1);
+  }
+
+  &__item.active {
+    background-color: variables.$blue-bae;
+
+    &:hover {
+      background-color: variables.$blue-bae;
+    }
+  }
+}
