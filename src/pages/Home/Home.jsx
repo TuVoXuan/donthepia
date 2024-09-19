@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Home.module.scss";
 import Header from "../../components/Header/Header";
+import Countdown from "./CountDown/CountDown";
+import NFTValue from "./NFTValue/NFTValue";
 
 export default function Home() {
   return (
@@ -43,6 +45,16 @@ export default function Home() {
             /assets/images/home/img-about-02@2x.png 2x
             /assets/images/home/img-about-02@3x.png 3x"
         />
+      </div>
+
+      <div className={styles["join-community"]}>
+        <h2 className={styles["join-community__title"]}>
+          Join the community to get even more benefits.
+        </h2>
+
+        <Countdown daysToCountdown={5} className={styles["countdown"]} />
+
+        <NFTValue className={styles["nft-values"]} />
       </div>
     </div>
   );

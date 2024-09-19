@@ -38,6 +38,7 @@
   padding: 20px 12px;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  box-sizing: border-box;
 
   @include respond-to(sm) {
     padding: 40px 24px;
@@ -158,5 +159,100 @@
       bottom: 50px;
       right: 60px;
     }
+  }
+}
+
+.join-community {
+  position: relative;
+  background-image: image-set(
+    url("../../../public/assets/images/home/img-map.png") 1x,
+    url("../../../public/assets/images/home/img-map@2x.png") 2x,
+    url("../../../public/assets/images/home/img-map@3x.png") 3x
+  );
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+
+  @include respond-to(sm) {
+    height: 640px;
+  }
+  @include respond-to(lg) {
+    height: 820px;
+  }
+  @include respond-to(xl) {
+    height: 1080px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  @include respond-to(2xl) {
+    height: 809px;
+    background-size: contain;
+  }
+
+  &__title {
+    color: variables.$white-fff;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 68px;
+    max-width: 260px;
+    margin: 0 auto;
+
+    @include respond-to(sm) {
+      font-size: 32px;
+      padding-top: 80px;
+      max-width: 350px;
+    }
+    @include respond-to(lg) {
+      font-size: 46px;
+      max-width: 500px;
+    }
+    @include respond-to(xl) {
+      font-size: 64px;
+      padding-top: 100px;
+      max-width: 680px;
+    }
+
+    @include respond-to(2xl) {
+      padding-top: 65px;
+    }
+  }
+}
+
+.countdown {
+  margin-top: 80px;
+
+  @include respond-to(sm) {
+    gap: 24px;
+    margin-top: 100px;
+  }
+
+  @include respond-to(lg) {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+  }
+
+  @include respond-to(2xl) {
+    left: 48px;
+  }
+}
+
+.nft-values {
+  margin-top: 80px;
+
+  @include respond-to(sm) {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+
+  @include respond-to(lg) {
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+  }
+
+  @include respond-to(2xl) {
+    right: 48px;
   }
 }
