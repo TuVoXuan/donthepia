@@ -56,6 +56,29 @@ export default function Home() {
 
         <NFTValue className={styles["nft-values"]} />
       </div>
+
+      <div className={styles["about-donq-nft"]}>
+        <div className={styles["about-donq-nft__text"]}>
+          <h1 className={styles["about-donq-nft__text__title"]}>
+            About the antipathy of DONQ NFT Nodes
+          </h1>
+          <p className={styles["about-donq-nft__text__des"]}>
+            DONQ NFT Node는 20번의 반감기가 있습니다. 반감기에는 DONQ NFT NODE가
+            100ea ~ 500ea 생성될 때마다 DONQ가 자동소각됩니다. 탈중앙화 방식으로
+            DONQ 코인 가격은 시장 유동성에 의해서 자유롭게 결정됩니다.
+          </p>
+        </div>
+
+        <div className={styles["about-donq-nft__img"]}>
+          <img
+            src="/assets/images/home/img-donq-nft-nodes.png"
+            alt="img-donq-nft-node"
+            srcSet="/assets/images/home/img-donq-nft-nodes.png 1x,
+            /assets/images/home/img-donq-nft-nodes@2x.png 2x,
+            /assets/images/home/img-donq-nft-nodes@3x.png 3x"
+          />
+        </div>
+      </div>
     </div>
   );
 }
