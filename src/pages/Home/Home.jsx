@@ -154,6 +154,108 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <div className={styles["donq-token"]}>
+        <h1 className={styles["donq-token__title"]}>DONQ Token Information </h1>
+
+        <div className={styles["donq-token__token-info"]}>
+          <div className={styles["donq-token__token-info__item"]}>
+            <p className={styles["donq-token__token-info__item__label"]}>
+              Taken Information
+            </p>
+            <p className={styles["donq-token__token-info__item__value"]}>
+              NODE
+            </p>
+          </div>
+          <div className={styles["donq-token__token-info__item"]}>
+            <p className={styles["donq-token__token-info__item__label"]}>
+              Taken symbol
+            </p>
+            <p className={styles["donq-token__token-info__item__value"]}>
+              NODE
+            </p>
+          </div>
+          <div className={styles["donq-token__token-info__item"]}>
+            <p className={styles["donq-token__token-info__item__label"]}>
+              Blockchain
+            </p>
+            <p className={styles["donq-token__token-info__item__value"]}>
+              BNB Chain
+            </p>
+          </div>
+          <div className={styles["donq-token__token-info__item"]}>
+            <p className={styles["donq-token__token-info__item__label"]}>
+              Total Supply
+            </p>
+            <p className={styles["donq-token__token-info__item__value"]}>
+              1,000,000,000
+            </p>
+          </div>
+        </div>
+
+        <div className={styles["graph-figures"]}>
+          <div className={styles["graph-figures__graph"]}>
+            <img
+              src="/assets/images/home/img-token-info.png"
+              alt="img-token-info"
+              srcSet="/assets/images/home/img-token-info.png 1x,
+              /assets/images/home/img-token-info@2x.png 2x,
+              /assets/images/home/img-token-info@3x.png 3x"
+            />
+          </div>
+
+          <div className={styles["graph-figures__figures"]}>
+            <div className={styles["graph-figures__figures__item"]}>
+              <p className={styles["graph-figures__figures__item__value"]}>
+                400,000,000
+              </p>
+              <p className={styles["graph-figures__figures__item__sub"]}>
+                Eco-System (40%)
+              </p>
+            </div>
+            <div className={styles["graph-figures__figures__item"]}>
+              <p className={styles["graph-figures__figures__item__value"]}>
+                100,000,000
+              </p>
+              <p className={styles["graph-figures__figures__item__sub"]}>
+                Company Reserves (10%)
+              </p>
+            </div>
+            <div className={styles["graph-figures__figures__item"]}>
+              <p className={styles["graph-figures__figures__item__value"]}>
+                200,000,000
+              </p>
+              <p className={styles["graph-figures__figures__item__sub"]}>
+                Marketing (20%)
+              </p>
+            </div>
+            <div className={styles["graph-figures__figures__item"]}>
+              <p className={styles["graph-figures__figures__item__value"]}>
+                100,000,000
+              </p>
+              <p className={styles["graph-figures__figures__item__sub"]}>
+                Team / Advisor (10%)
+              </p>
+            </div>
+            <div className={styles["graph-figures__figures__item"]}>
+              <p className={styles["graph-figures__figures__item__value"]}>
+                100,000,000
+              </p>
+              <p className={styles["graph-figures__figures__item__sub"]}>
+                Ciculation (10%)
+              </p>
+            </div>
+            <div className={styles["graph-figures__figures__item"]}>
+              <p className={styles["graph-figures__figures__item__value"]}>
+                100,000,000
+              </p>
+              <p className={styles["graph-figures__figures__item__sub"]}>
+                Contributor (10%)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
