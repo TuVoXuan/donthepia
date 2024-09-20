@@ -128,6 +128,32 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className={styles["free-characters"]}>
+        <div className={styles["free-characters__group-title"]}>
+          <h1 className={styles["free-characters__group-title__first-title"]}>
+            Free Characters{" "}
+            <Icons.Star
+              className={
+                styles["free-characters__group-title__first-title__icon"]
+              }
+            />
+          </h1>
+          <h1>Interest farming</h1>
+          <h1>Platform</h1>
+          <h1>Governance</h1>
+        </div>
+        <div className={styles["free-characters__group-des"]}>
+          <p className={styles["free-characters__group-des__top"]}>
+            DONQ NFT NODE 보유자는 DonThePia (Donquixote The Utopia) 생태계에서
+            생성되는 다양한 NFT 캐릭터들을 무상으로 받을 수 있습니다. 보유한
+            NFT의 가치가 상승하면, NFT 거래소를 통해서 거래를 할 수 있습니다.
+          </p>
+          <p className={styles["free-characters__group-des__bottom"]}>
+            DONQ NFT Nodes Holder’s Benefits
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

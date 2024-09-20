@@ -1,6 +1,12 @@
 import * as React from "react";
 const Star = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={64} height={64} {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={64}
+    height={64}
+    viewBox="0 0 64 64"
+    {...props}
+  >
     <path fill="none" d="M0 0h63.1v63.1H0V0z" />
     <path
       fill="currentColor"
