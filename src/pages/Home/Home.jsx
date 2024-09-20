@@ -3,6 +3,7 @@ import styles from "./Home.module.scss";
 import Header from "../../components/Header/Header";
 import Countdown from "./CountDown/CountDown";
 import NFTValue from "./NFTValue/NFTValue";
+import Icons from "../../components/Icons";
 
 export default function Home() {
   return (
@@ -77,6 +78,54 @@ export default function Home() {
             /assets/images/home/img-donq-nft-nodes@2x.png 2x,
             /assets/images/home/img-donq-nft-nodes@3x.png 3x"
           />
+        </div>
+      </div>
+
+      <div className={styles["what-donq"]}>
+        <div className={styles["what-donq__text"]}>
+          <h1 className={styles["what-donq__text__title"]}>What is an</h1>
+          <h1 className={styles["what-donq__text__title"]}>Eco-System DONQ?</h1>
+          <p className={styles["what-donq__text__des"]}>
+            DONQ는 NFT와 T2E Trading , P2E Game을 결합하여 어떠한 거래에
+            대해서도 중앙 기관이나 제3자에 의한 허가가 필요없는 DAO 조직을
+            형성하여 유저들이 자율적으로 판단하고 투표하여 생태계를 이끌고
+            확장할 수 있도록 합니다.
+          </p>
+        </div>
+
+        <div className={styles["illustrate-wrap"]}>
+          <div className={styles["illustrate"]}>
+            <div className={styles["illustrate__top"]}>
+              <p>What does DAO stand for</p>
+            </div>
+            <div className={styles["illustrate__center"]}>
+              <p>
+                <span>What is T2E?</span>
+                <span>What is T2E?</span>
+                <span>What is T2E?</span>
+              </p>
+            </div>
+            <div className={styles["illustrate__bottom"]}>
+              <p>Know about P2E</p>
+            </div>
+          </div>
+          <div className={styles["illustrate-wrap__card-wrap"]}>
+            <div className={styles["illustrate-wrap__card"]}>
+              <div className={styles["illustrate-wrap__card__main"]}>
+                <Icons.Chart
+                  className={styles["illustrate-wrap__card__main__icon"]}
+                />
+                <h5 className={styles["illustrate-wrap__card__main__title"]}>
+                  T2E
+                </h5>
+                <p className={styles["illustrate-wrap__card__main__des"]}>
+                  T2E Trading 은 코인 거래차트에 대한 교육, 트레이더들의
+                  노하우나 투자기법에 대한 교육, 디지털 자산에 대한 전문적인
+                  지식에 대한 교육 상품입니다.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
