@@ -106,3 +106,94 @@
     }
   }
 }
+
+.team-adviser {
+  &__text-group {
+    width: fit-content;
+    margin-left: auto;
+    padding-top: 70px;
+    padding-right: 12px;
+    padding-bottom: 59px;
+    @include respond-to(sm) {
+      padding-top: 93px;
+      padding-right: 68px;
+      padding-bottom: 78px;
+    }
+    @include respond-to(lg) {
+      padding-top: 112px;
+      padding-right: 120px;
+      padding-bottom: 94px;
+    }
+    @include respond-to(xl) {
+      padding-top: 140px;
+      padding-right: 132px;
+      padding-bottom: 118px;
+    }
+    @include respond-to(2xl) {
+      padding-right: 164px;
+    }
+
+    &__title {
+      font-size: 24px;
+      color: variables.$white-fff;
+      line-height: 1.25;
+
+      @include respond-to(sm) {
+        font-size: 32px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+      }
+      @include respond-to(xl) {
+        font-size: 64px;
+      }
+    }
+  }
+}
+
+.partners-slider {
+  width: 100%;
+  height: var(--height);
+  padding: 120px 0;
+  overflow: hidden;
+
+  @include respond-to(sm) {
+    padding: 160px 0;
+  }
+  @include respond-to(lg) {
+    padding: 240px 0;
+  }
+  @include respond-to(xl) {
+    padding: 320px 0;
+  }
+  @include respond-to(2xl) {
+    padding: 390px 0;
+  }
+
+  &__list {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+  }
+  &__item {
+    position: absolute;
+    height: var(--height);
+    width: var(--width);
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+    img {
+      width: 100%;
+    }
+  }
+
+  @keyframes autoRun {
+    from {
+      left: 100%;
+    }
+    to {
+      left: calc(var(--width) * -1);
+    }
+  }
+}
