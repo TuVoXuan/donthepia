@@ -1,0 +1,108 @@
+@use "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+
+.wrapper {
+  background-color: variables.$black-000;
+
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+.roadmap {
+  padding-top: 70px;
+  padding-bottom: 57px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 52px;
+  overflow: hidden;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 93px;
+    padding-bottom: 76px;
+  }
+  @include respond-to(lg) {
+    padding-top: 112px;
+    padding-bottom: 92px;
+  }
+  @include respond-to(xl) {
+    padding-top: 140px;
+    padding-bottom: 115px;
+  }
+
+  &__text-group {
+    padding-left: 12px;
+    @include respond-to(sm) {
+      padding-left: 24px;
+    }
+    @include respond-to(lg) {
+      padding-left: 32px;
+    }
+    @include respond-to(xl) {
+      padding-left: 48px;
+    }
+    @include respond-to(2xl) {
+      padding-left: 52px;
+    }
+
+    &__title {
+      font-size: 24px;
+      color: variables.$white-fff;
+      line-height: 1.25;
+
+      @include respond-to(sm) {
+        font-size: 32px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+      }
+      @include respond-to(xl) {
+        font-size: 64px;
+      }
+    }
+    &__desc {
+      margin-top: 24px;
+      font-size: 14px;
+      color: variables.$gray-a1a;
+      font-family: "Pretendard", sans-serif;
+      line-height: 1.6;
+
+      @include respond-to(sm) {
+        font-size: 16px;
+        margin-top: 32px;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+        margin-top: 45px;
+        max-width: 400px;
+      }
+      @include respond-to(xl) {
+        font-size: 20px;
+        max-width: 571px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin-left: 20px;
+
+    @include respond-to(sm) {
+      margin-top: 46px;
+    }
+    @include respond-to(lg) {
+      margin-top: 70px;
+    }
+    @include respond-to(xl) {
+      margin-left: 30px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
