@@ -1,3 +1,924 @@
+@use "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+
 .container {
-  font-family: "Pretendard", sans-serif;
+  // font-family: "Pretendard", sans-serif;
+}
+
+.introduction-banner {
+  height: 211px;
+  background-image: image-set(
+    url("../../../public/assets/images/home/banner.png") 1x,
+    url("../../../public/assets/images/home/banner@2x.png") 2x,
+    url("../../../public/assets/images/home/banner@3x.png") 3x
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include respond-to(sm) {
+    height: 432px;
+  }
+  @include respond-to(lg) {
+    height: 576px;
+  }
+  @include respond-to(xl) {
+    height: 720px;
+  }
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 810px;
+  }
+}
+
+.introduction {
+  position: relative;
+  background-color: variables.$black-000;
+  padding: 20px 12px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  box-sizing: border-box;
+
+  @include respond-to(sm) {
+    padding: 40px 24px;
+  }
+
+  @include respond-to(lg) {
+    padding: 80px 32px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  @include respond-to(xl) {
+    padding: 138px 50px;
+  }
+
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__text-wrap {
+    color: variables.$white-fff;
+
+    @include respond-to(lg) {
+      grid-column: span 7 / span 7;
+    }
+    @include respond-to(xl) {
+      grid-column: span 9 / span 9;
+    }
+    @include respond-to(xl) {
+      grid-column: span 8 / span 8;
+    }
+
+    &__main {
+      font-size: 24px;
+      line-height: 1.25;
+      margin-bottom: 20px;
+
+      @include respond-to(sm) {
+        font-size: 32px;
+        max-width: 600px;
+        margin: 0 auto 42px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+        max-width: 1200px;
+      }
+      @include respond-to(xl) {
+        font-size: 64px;
+      }
+    }
+    &__sub {
+      font-size: 14px;
+      line-height: 1.6;
+      color: variables.$gray-a1a;
+      font-family: "Pretendard", sans-serif;
+
+      @include respond-to(sm) {
+        font-size: 16px;
+        max-width: 350px;
+        margin: 0 auto;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+        max-width: 350px;
+        margin: 0 0 0 50px;
+      }
+      @include respond-to(xl) {
+        font-size: 20px;
+        max-width: 400px;
+        margin: 0 0 0 100px;
+      }
+    }
+  }
+
+  &__img-left {
+    position: absolute;
+    width: 193px;
+    height: 198px;
+
+    display: none;
+
+    @include respond-to(sm) {
+      width: 220px;
+      height: 226px;
+    }
+    @include respond-to(lg) {
+      display: block;
+      bottom: 150px;
+      right: 310px;
+    }
+    @include respond-to(xl) {
+      width: 308px;
+      height: 316px;
+      bottom: 200px;
+      right: 400px;
+    }
+  }
+
+  &__img-right {
+    position: absolute;
+    width: 197.5px;
+    height: 339px;
+
+    display: none;
+
+    @include respond-to(sm) {
+      width: 225px;
+      height: 388px;
+    }
+
+    @include respond-to(lg) {
+      display: block;
+      bottom: 50px;
+      right: 60px;
+    }
+    @include respond-to(xl) {
+      width: 316px;
+      height: 542px;
+      bottom: 50px;
+      right: 60px;
+    }
+  }
+}
+
+.join-community {
+  position: relative;
+  background-image: image-set(
+    url("../../../public/assets/images/home/img-map.png") 1x,
+    url("../../../public/assets/images/home/img-map@2x.png") 2x,
+    url("../../../public/assets/images/home/img-map@3x.png") 3x
+  );
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+
+  @include respond-to(sm) {
+    height: 640px;
+  }
+  @include respond-to(lg) {
+    height: 820px;
+  }
+  @include respond-to(xl) {
+    height: 1080px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  @include respond-to(2xl) {
+    height: 809px;
+    background-size: contain;
+  }
+
+  &__title {
+    color: variables.$white-fff;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 68px;
+    max-width: 260px;
+    margin: 0 auto;
+
+    @include respond-to(sm) {
+      font-size: 32px;
+      padding-top: 80px;
+      max-width: 350px;
+    }
+    @include respond-to(lg) {
+      font-size: 46px;
+      max-width: 500px;
+    }
+    @include respond-to(xl) {
+      font-size: 64px;
+      padding-top: 100px;
+      max-width: 680px;
+    }
+
+    @include respond-to(2xl) {
+      padding-top: 65px;
+    }
+  }
+}
+
+.countdown {
+  margin-top: 80px;
+
+  @include respond-to(sm) {
+    gap: 24px;
+    margin-top: 100px;
+  }
+
+  @include respond-to(lg) {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+  }
+
+  @include respond-to(2xl) {
+    left: 48px;
+  }
+}
+
+.nft-values {
+  margin-top: 80px;
+
+  @include respond-to(sm) {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+
+  @include respond-to(lg) {
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+  }
+
+  @include respond-to(2xl) {
+    right: 48px;
+  }
+}
+
+.about-donq-nft {
+  background-color: variables.$black-000;
+  background-image: image-set(
+    url("../../../public/assets/images/home/bg-donq-nft-nodes.png") 1x,
+    url("../../../public/assets/images/home/bg-donq-nft-nodes@2x.png") 2x,
+    url("../../../public/assets/images/home/bg-donq-nft-nodes@3x.png") 3x
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+
+  @include respond-to(sm) {
+    padding: 80px 0;
+  }
+
+  @include respond-to(lg) {
+    padding: 100px 0;
+  }
+  @include respond-to(lg) {
+    padding-top: 120px;
+    padding-bottom: 102px;
+  }
+
+  @include respond-to(2xl) {
+    padding-top: 140px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    padding: 0 20px 50px 110px;
+    @include respond-to(sm) {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      padding: 0 50px 80px 50px;
+    }
+    @include respond-to(lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include respond-to(xl) {
+      padding: 0 50px 120px 50px;
+    }
+
+    &__title {
+      font-size: 24px;
+      color: variables.$white-fff;
+      margin-bottom: 20px;
+      line-height: 1.25;
+
+      @include respond-to(sm) {
+        font-size: 32px;
+        grid-column: span 3 / span 3;
+        grid-column-start: 3;
+        margin-bottom: 28px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+        margin-bottom: 32px;
+        grid-column: unset;
+        grid-column-start: 2;
+      }
+      @include respond-to(xl) {
+        font-size: 64px;
+        margin-bottom: 45px;
+      }
+    }
+    &__des {
+      color: variables.$gray-a1a;
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 260px;
+      font-family: "Pretendard", sans-serif;
+
+      @include respond-to(sm) {
+        font-size: 16px;
+        grid-column: span 3 / span 3;
+        grid-column-start: 3;
+        max-width: unset;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+        grid-column: unset;
+        grid-column-start: 2;
+        max-width: unset;
+      }
+      @include respond-to(xl) {
+        font-size: 20px;
+        max-width: 660px;
+      }
+    }
+  }
+
+  &__img {
+    width: 80%;
+    margin: 0 auto;
+
+    @include respond-to(xl) {
+      max-width: 1040px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+.what-donq {
+  background-color: variables.$black-000;
+  padding: 70px 24px 108px;
+  box-sizing: border-box;
+
+  @include respond-to(sm) {
+    padding: 82px 32px 120px;
+  }
+  @include respond-to(lg) {
+    padding: 100px 38px 160px;
+  }
+  @include respond-to(xl) {
+    padding: 140px 38px 216px;
+  }
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    &__title {
+      font-size: 24px;
+      color: variables.$white-fff;
+      line-height: 1.25;
+      @include respond-to(sm) {
+        font-size: 32px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+      }
+      @include respond-to(xl) {
+        font-size: 64px;
+      }
+    }
+    &__des {
+      color: variables.$gray-a1a;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 20px;
+      font-family: "Pretendard", sans-serif;
+
+      @include respond-to(sm) {
+        font-size: 16px;
+        max-width: 400px;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+      }
+      @include respond-to(xl) {
+        font-size: 20px;
+        max-width: 571px;
+      }
+    }
+  }
+}
+
+.illustrate-wrap {
+  position: relative;
+  overflow: visible;
+
+  &__card-wrap {
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+
+    @include respond-to(sm) {
+      right: 110px;
+      bottom: 4px;
+    }
+    @include respond-to(2xl) {
+      right: 180px;
+      bottom: 20px;
+    }
+  }
+
+  &__card {
+    position: relative;
+
+    &__main {
+      position: relative;
+      width: 160px;
+      background: variables.$orange-f13;
+      padding: 12px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+
+      @include respond-to(sm) {
+        width: 245px;
+        padding: 24px;
+      }
+
+      @include respond-to(lg) {
+        width: 300px;
+        padding: 32px;
+      }
+
+      @include respond-to(xl) {
+        width: 347px;
+        padding: 32px 42px;
+      }
+
+      &__icon {
+        height: 40px;
+        width: 40px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+
+        @include respond-to(sm) {
+          height: 60px;
+          width: 60px;
+          margin-top: 24px;
+          margin-bottom: 16px;
+        }
+        @include respond-to(lg) {
+          height: 72px;
+          width: 72px;
+          margin-top: 54px;
+          margin-bottom: 32px;
+        }
+        @include respond-to(xl) {
+          height: 80px;
+          width: 80px;
+          margin-top: 92px;
+          margin-bottom: 40px;
+        }
+      }
+
+      &__title {
+        font-size: 14px;
+        color: variables.$black-000;
+        margin-bottom: 8px;
+
+        @include respond-to(sm) {
+          font-size: 18px;
+          margin-bottom: 12px;
+        }
+        @include respond-to(lg) {
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+        @include respond-to(xl) {
+          margin-bottom: 22px;
+        }
+      }
+      &__des {
+        font-size: 12px;
+        color: variables.$black-000;
+        text-align: center;
+        line-height: 1.5;
+        font-family: "Pretendard", sans-serif;
+
+        @include respond-to(sm) {
+          font-size: 14px;
+        }
+        @include respond-to(sm) {
+          font-size: 16px;
+        }
+        @include respond-to(lg) {
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background-color: variables.$green-144;
+      top: 5px;
+      left: 5px;
+      z-index: 1;
+
+      @include respond-to(lg) {
+        top: 10px;
+        left: 10px;
+      }
+    }
+  }
+}
+
+.illustrate {
+  font-size: 32px;
+  overflow: hidden;
+  margin-top: 80px;
+
+  @include respond-to(sm) {
+    max-width: 600px;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+  }
+
+  @include respond-to(lg) {
+    font-size: 52px;
+    max-width: 800px;
+    margin-top: 102px;
+  }
+  @include respond-to(xl) {
+    font-size: 64px;
+    max-width: 1000px;
+  }
+  @include respond-to(xl) {
+    font-size: 64px;
+    max-width: 1200px;
+  }
+
+  &__top,
+  &__bottom,
+  &__center {
+    display: flex;
+    justify-content: center;
+
+    p {
+      white-space: nowrap;
+    }
+  }
+
+  &__top,
+  &__bottom {
+    color: variables.$black-232;
+    text-align: center;
+  }
+
+  &__top {
+    margin-bottom: 20px;
+    @include respond-to(sm) {
+      margin-bottom: 24px;
+    }
+    @include respond-to(lg) {
+      margin-bottom: 30px;
+    }
+  }
+  &__bottom {
+    margin-top: 20px;
+    @include respond-to(sm) {
+      margin-top: 24px;
+    }
+    @include respond-to(lg) {
+      margin-top: 30px;
+    }
+  }
+
+  &__center {
+    padding: 12px 0;
+    color: variables.$white-fff;
+    border-top: 2px solid variables.$gray-686;
+    border-bottom: 2px solid variables.$gray-686;
+    p {
+      display: flex;
+      column-gap: 30px;
+    }
+
+    @include respond-to(sm) {
+      padding: 16px 0;
+    }
+    @include respond-to(lg) {
+      padding: 20px 0;
+    }
+    @include respond-to(lg) {
+      padding: 24px 0;
+    }
+  }
+}
+
+.free-characters {
+  background-color: variables.$black-000;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  padding: 80px 12px 70px;
+  gap: 56px;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 106px 24px 93px;
+    gap: 0px;
+  }
+  @include respond-to(lg) {
+    padding: 128px 72px 112px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  @include respond-to(xl) {
+    padding: 160px 100px 140px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  &__group-title {
+    font-size: 32px;
+    color: variables.$white-fff;
+    width: fit-content;
+    margin: 0 auto;
+
+    @include respond-to(sm) {
+      font-size: 40px;
+      margin: unset;
+      width: unset;
+    }
+    @include respond-to(lg) {
+      font-size: 52px;
+      grid-column: span 3 / span 3;
+    }
+    @include respond-to(xl) {
+      font-size: 64px;
+    }
+    @include respond-to(2xl) {
+      font-size: 72px;
+    }
+
+    &__first-title {
+      color: variables.$orange-f13;
+      &__icon {
+        height: 20px;
+        width: 20px;
+
+        @include respond-to(sm) {
+          height: 24px;
+          width: 24px;
+        }
+        @include respond-to(lg) {
+          height: 32px;
+          width: 32px;
+        }
+        @include respond-to(xl) {
+          height: 44px;
+          width: 44px;
+        }
+      }
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include respond-to(sm) {
+        margin-bottom: 16px;
+      }
+      @include respond-to(lg) {
+        margin-bottom: 24px;
+      }
+      @include respond-to(xl) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__group-des {
+    font-size: 16px;
+    font-family: "Pretendard", sans-serif;
+    max-width: 284px;
+    margin: 0 auto;
+
+    @include respond-to(sm) {
+      font-size: 18px;
+      max-width: 290px;
+    }
+    @include respond-to(lg) {
+      grid-column: span 2 / span 2;
+      font-size: 20px;
+      max-width: unset;
+    }
+
+    &__top {
+      line-height: 1.6;
+      color: variables.$white-fff;
+      margin-bottom: 50px;
+
+      @include respond-to(sm) {
+        margin-bottom: 220px;
+      }
+      @include respond-to(lg) {
+        margin-bottom: 320px;
+      }
+      @include respond-to(xl) {
+        margin-bottom: 460px;
+      }
+      @include respond-to(2xl) {
+        margin-bottom: 540px;
+      }
+    }
+    &__bottom {
+      color: variables.$gray-a1a;
+    }
+  }
+}
+
+.donq-token {
+  background-color: variables.$black-000;
+  padding: 65px 12px 76px;
+
+  @include respond-to(sm) {
+    padding: 86px 24px 101px;
+  }
+  @include respond-to(lg) {
+    padding: 104px 72px 121px;
+  }
+  @include respond-to(xl) {
+    padding: 130px 100px 152px;
+  }
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    font-size: 24px;
+    color: variables.$white-fff;
+    text-align: center;
+    margin-bottom: 24px;
+
+    @include respond-to(sm) {
+      font-size: 32px;
+      margin-bottom: 46px;
+    }
+    @include respond-to(lg) {
+      font-size: 46px;
+      margin-bottom: 64px;
+    }
+    @include respond-to(xl) {
+      font-size: 64px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__token-info {
+    border-top: 2px solid variables.$gray-686;
+    border-bottom: 2px solid variables.$gray-686;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    @include respond-to(sm) {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 8px;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      font-size: 12px;
+      @include respond-to(sm) {
+        font-size: 14px;
+        row-gap: 12px;
+      }
+      @include respond-to(lg) {
+        font-size: 16px;
+      }
+
+      &__label {
+        color: variables.$gray-a1a;
+      }
+      &__value {
+        color: variables.$white-fff;
+      }
+    }
+  }
+}
+
+.graph-figures {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 40px;
+
+  @include respond-to(sm) {
+    margin-top: 70px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respond-to(lg) {
+    margin-top: 80px;
+  }
+
+  @include respond-to(xl) {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  &__graph {
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    @include respond-to(xl) {
+      grid-column: span 3 / span 3;
+    }
+  }
+
+  &__figures {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 16px;
+    column-gap: 24px;
+    border-bottom: 2px solid variables.$gray-686;
+    padding-bottom: 50px;
+
+    @include respond-to(lg) {
+      row-gap: 24px;
+      column-gap: 24px;
+    }
+    @include respond-to(xl) {
+      grid-column: span 4 / span 4;
+    }
+    @include respond-to(2xl) {
+      column-gap: 48px;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      row-gap: 7px;
+
+      &__value {
+        font-size: 18px;
+        color: variables.$white-fff;
+        @include respond-to(sm) {
+          font-size: 24px;
+        }
+        @include respond-to(lg) {
+          font-size: 32px;
+        }
+        @include respond-to(xl) {
+          font-size: 48px;
+        }
+      }
+      &__sub {
+        font-size: 12px;
+        color: variables.$gray-a1a;
+        @include respond-to(sm) {
+          font-size: 14px;
+        }
+        @include respond-to(lg) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }

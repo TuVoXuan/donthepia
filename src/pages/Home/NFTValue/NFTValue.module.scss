@@ -1,0 +1,31 @@
+@use "../../../styles/variables.scss";
+@import "../../../styles/responsive.scss";
+
+.wrapper {
+  background-color: variables.$white-fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    font-size: 12px;
+    line-height: 1.25;
+    padding: 0 8px;
+
+    @include respond-to(sm) {
+      font-size: 14px;
+      row-gap: 12px;
+      padding: 0 20px;
+    }
+
+    @include respond-to(xl) {
+      font-size: 16px;
+      padding: 0 24px;
+    }
+  }
+}

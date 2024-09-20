@@ -1,0 +1,23 @@
+@use "../../styles/variables.scss";
+
+.button-link {
+  color: variables.$black-0d0;
+  font-size: 15.5px;
+  border-radius: 50px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+
+  &.orange {
+    background-color: variables.$orange-f13;
+  }
+  &.white {
+    background-color: variables.$white-fff;
+  }
+
+  &__icon {
+    height: 12px;
+    width: 12px;
+  }
+}

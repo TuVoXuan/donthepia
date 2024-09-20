@@ -1,0 +1,8 @@
+@use "../../../styles/variables.scss";
+@import "../../../styles/responsive.scss";
+
+.countdown-wrap {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

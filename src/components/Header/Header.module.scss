@@ -1,0 +1,168 @@
+@use "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
+
+.header-wrap {
+  background-color: variables.$black-000;
+  @include respond-to(2xl) {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &.show-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  &__menu.show-menu {
+    display: block;
+  }
+
+  &__menu {
+    display: none;
+    color: variables.$white-fff;
+
+    &__item {
+      padding: 16px 12px;
+      font-size: 14px;
+      border-bottom: 1px solid variables.$white-fff;
+
+      &:last-child {
+        border-bottom: unset;
+      }
+    }
+  }
+
+  &__group-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 32px;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+
+  &__menu-horizontal-wrap {
+    display: none;
+    @include respond-to(xl) {
+      display: block;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      color: variables.$white-fff;
+      font-size: 15.5px;
+      padding: 15px 15px;
+      @include respond-to(2xl) {
+        padding: 15px 20px;
+      }
+    }
+  }
+
+  &__group-btn-horizontal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    column-gap: 32px;
+
+    @include respond-to(lg) {
+      display: flex;
+    }
+  }
+}
+
+.header {
+  padding: 24px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond-to(2xl) {
+    padding: 30px 48px;
+  }
+  &__logo {
+    height: 20px;
+
+    img {
+      width: auto;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__menu-icon {
+    position: relative;
+    width: 24px;
+    height: 17.5px;
+    cursor: pointer;
+
+    @include respond-to(xl) {
+      display: none;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 1.5px;
+      width: 100%;
+      background: variables.$white-fff;
+      border-radius: 1.5px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2) {
+        top: 8px;
+      }
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+
+    &.open {
+      & span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: -0.5px;
+      }
+      & span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+      & span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 16.5px;
+      }
+    }
+  }
+}
