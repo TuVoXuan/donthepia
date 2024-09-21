@@ -197,3 +197,84 @@
     }
   }
 }
+
+.faq {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  padding-bottom: 70px;
+
+  @include respond-to(sm) {
+    padding-bottom: 93px;
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 112px;
+  }
+  @include respond-to(xl) {
+    padding-bottom: 140px;
+  }
+
+  &__text-group {
+    padding-top: 70px;
+    padding-left: 12px;
+    padding-bottom: 27px;
+
+    @include respond-to(sm) {
+      padding-top: 93px;
+      padding-left: 24px;
+      padding-bottom: 36px;
+    }
+    @include respond-to(lg) {
+      padding-top: 112px;
+      padding-left: 32px;
+      padding-bottom: 43px;
+    }
+    @include respond-to(xl) {
+      padding-top: 140px;
+      padding-left: 45px;
+      padding-bottom: 54px;
+    }
+    &__title {
+      font-size: 24px;
+      color: variables.$white-fff;
+      line-height: 1.25;
+      white-space: nowrap;
+
+      @include respond-to(sm) {
+        font-size: 32px;
+      }
+      @include respond-to(lg) {
+        font-size: 46px;
+      }
+      @include respond-to(xl) {
+        font-size: 64px;
+      }
+    }
+  }
+
+  &__list {
+    @include respond-to(sm) {
+      padding: 0 8px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+    }
+    @include respond-to(lg) {
+      grid-column-start: 2;
+      grid-row-start: 2;
+      padding: unset;
+      row-gap: 24px;
+      padding-left: 0;
+      padding-right: 24px;
+    }
+    @include respond-to(xl) {
+      row-gap: 32px;
+      padding-right: 32px;
+    }
+    @include respond-to(2xl) {
+      row-gap: 46px;
+      padding-right: 50px;
+    }
+  }
+}

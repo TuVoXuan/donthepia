@@ -2,6 +2,50 @@ import React from "react";
 import styles from "./Roadmap.module.scss";
 import Icons from "../../components/Icons/index";
 import ReviewCarousel from "./ReviewCarousel/ReviewCarousel";
+import Collapse from "./Collapse/Collapse";
+
+const faqList = [
+  {
+    question: "NFT는 뭔가요? 이것은 어떻게 사용하나요?",
+    answer:
+      "FAQ에 대한 답변이 들어갑니다. NFT는 홈페이지 메인에서 NFT 구매 버튼을 통해 구매할 수 있습니다.",
+  },
+  {
+    question: "홈페이지를 이용하는데, 로그인은 어떻게 하나요?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima saepe ducimus facere dolores tenetur neque facilis ipsa, pariatur quidem est eius voluptate expedita debitis voluptates eum rem vitae magni officiis.",
+  },
+  {
+    question: "NFT를 구매했어요. 사용은 어떻게 하나요?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima saepe ducimus facere dolores tenetur neque facilis ipsa, pariatur quidem est eius voluptate expedita debitis voluptates eum rem vitae magni officiis.",
+  },
+  {
+    question: "NFT를 구매하는 것에 실패했어요. 어떻게 해결해야하나요?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima saepe ducimus facere dolores tenetur neque facilis ipsa, pariatur quidem est eius voluptate expedita debitis voluptates eum rem vitae magni officiis.",
+  },
+  {
+    question: "NFT를 다른 방식으로 구매하고 싶어요. 어떤 방법이 있나요?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima saepe ducimus facere dolores tenetur neque facilis ipsa, pariatur quidem est eius voluptate expedita debitis voluptates eum rem vitae magni officiis.",
+  },
+  {
+    question: "로그인 시 오류가 있어요. 해결 방법이 알고 싶어요.",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima saepe ducimus facere dolores tenetur neque facilis ipsa, pariatur quidem est eius voluptate expedita debitis voluptates eum rem vitae magni officiis.",
+  },
+  {
+    question: "홈페이지를 이용하는데, 로그인은 어떻게 하나요?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima saepe ducimus facere dolores tenetur neque facilis ipsa, pariatur quidem est eius voluptate expedita debitis voluptates eum rem vitae magni officiis.",
+  },
+  {
+    question: "NFT를 구매했어요. 사용은 어떻게 하나요?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima saepe ducimus facere dolores tenetur neque facilis ipsa, pariatur quidem est eius voluptate expedita debitis voluptates eum rem vitae magni officiis.",
+  },
+];
 
 export default function Roadmap() {
   return (
@@ -132,6 +176,26 @@ export default function Roadmap() {
           /assets/images/roadmap/logo-partner-07@3x.png 3x"
             />
           </div>
+        </div>
+      </div>
+
+      <div className={styles["faq"]}>
+        <div className={styles["faq__text-group"]}>
+          <h1 className={styles["faq__text-group__title"]}>
+            If you have questions,
+          </h1>
+          <h1 className={styles["faq__text-group__title"]}>see our FAQ</h1>
+        </div>
+
+        <div className={styles["faq__list"]}>
+          {faqList.map((item, index) => (
+            <Collapse
+              orderNumber={index < 10 ? "0" + (index + 1) : index}
+              title={item.question}
+            >
+              {item.answer}
+            </Collapse>
+          ))}
         </div>
       </div>
     </div>
