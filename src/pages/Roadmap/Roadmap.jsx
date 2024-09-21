@@ -3,6 +3,7 @@ import styles from "./Roadmap.module.scss";
 import Icons from "../../components/Icons/index";
 import ReviewCarousel from "./ReviewCarousel/ReviewCarousel";
 import Collapse from "./Collapse/Collapse";
+import ButtonLink from "../../components/ButtonLink/ButtonLink";
 
 const faqList = [
   {
@@ -197,6 +198,44 @@ export default function Roadmap() {
             </Collapse>
           ))}
         </div>
+      </div>
+
+      <div className={styles["dontthepia"]}>
+        <div className={styles["dontthepia__main"]}>
+          <h1 className={styles["dontthepia__main__title"]}>Donthepia</h1>
+          <p className={styles["dontthepia__main__desc"]}>
+            더 많은 혜택을 받고 싶다면 DONTHEPIA 커뮤니티에 가입하세요.
+          </p>
+          <div className={styles["dontthepia__main__btn-group"]}>
+            <ButtonLink link={"/"} text={"NFT 구매하기"} bgColor={"white"} />
+            <ButtonLink link={"/"} text={"NFT 구매하기"} bgColor={"orange"} />
+          </div>
+        </div>
+
+        <img
+          className={styles["dontthepia__img-01"]}
+          src="/assets/images/roadmap/img-bottom-01.png"
+          alt="img-bottom-01"
+          srcSet="/assets/images/roadmap/img-bottom-01.png 1x,
+          /assets/images/roadmap/img-bottom-01@2x.png 2x,
+          /assets/images/roadmap/img-bottom-01@3x.png 3x,"
+        />
+        <img
+          className={styles["dontthepia__img-02"]}
+          src="/assets/images/roadmap/img-bottom-02.png"
+          alt="img-bottom-02"
+          srcSet="/assets/images/roadmap/img-bottom-02.png 1x,
+          /assets/images/roadmap/img-bottom-02@2x.png 2x,
+          /assets/images/roadmap/img-bottom-02@3x.png 3x,"
+        />
+        <img
+          className={styles["dontthepia__img-03"]}
+          src="/assets/images/roadmap/img-bottom-03.png"
+          alt="img-bottom-03"
+          srcSet="/assets/images/roadmap/img-bottom-03.png 1x,
+          /assets/images/roadmap/img-bottom-03@2x.png 2x,
+          /assets/images/roadmap/img-bottom-03@3x.png 3x,"
+        />
       </div>
     </div>
   );

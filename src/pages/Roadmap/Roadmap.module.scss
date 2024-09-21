@@ -278,3 +278,145 @@
     }
   }
 }
+
+.dontthepia {
+  position: relative;
+  background-color: variables.$black-232;
+  overflow: hidden;
+
+  &__main {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 152px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to(sm) {
+      padding: 202px 0;
+    }
+    @include respond-to(lg) {
+      padding: 243px 0;
+    }
+    @include respond-to(xl) {
+      padding: 304px 0;
+    }
+
+    &__title {
+      font-size: 60px;
+      font-weight: 600;
+      color: variables.$white-fff;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      @include respond-to(sm) {
+        font-size: 80px;
+        margin-bottom: 32px;
+      }
+      @include respond-to(lg) {
+        font-size: 100px;
+        margin-bottom: 46px;
+      }
+      @include respond-to(xl) {
+        font-size: 129px;
+        margin-bottom: 50px;
+      }
+    }
+    &__desc {
+      font-size: 14px;
+      color: variables.$gray-878;
+      font-family: "Pretendard", sans-serif;
+
+      @include respond-to(sm) {
+        font-size: 16px;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+      }
+      @include respond-to(xls) {
+        font-size: 20px;
+      }
+    }
+
+    &__btn-group {
+      margin-top: 40px;
+      display: flex;
+      column-gap: 16px;
+      @include respond-to(sm) {
+        margin-top: 53px;
+      }
+      @include respond-to(lg) {
+        margin-top: 64px;
+      }
+      @include respond-to(xl) {
+        margin-top: 80px;
+      }
+    }
+  }
+
+  &__img-01 {
+    display: none;
+    position: absolute;
+
+    @include respond-to(sm) {
+      display: block;
+      top: -35px;
+      left: -50px;
+      height: 168px;
+      width: 168px;
+    }
+    @include respond-to(lg) {
+      top: -50px;
+      left: -50px;
+      height: 202px;
+      width: 202px;
+    }
+    @include respond-to(xl) {
+      top: -50px;
+      left: -50px;
+      height: 253px;
+      width: 253px;
+    }
+
+    @include respond-to(2xl) {
+      top: -50px;
+      left: 60px;
+    }
+  }
+
+  &__img-02 {
+    display: none;
+    position: absolute;
+    @include respond-to(xl) {
+      display: block;
+      left: -225px;
+      top: 518px;
+      width: 461px;
+      height: 259px;
+    }
+  }
+
+  &__img-03 {
+    display: none;
+    position: absolute;
+
+    @include respond-to(sm) {
+      display: block;
+      top: 260px;
+      right: -76px;
+      height: 231px;
+      width: 231px;
+    }
+    @include respond-to(lg) {
+      top: 312px;
+      right: -62px;
+      height: 277px;
+      width: 277px;
+    }
+    @include respond-to(xl) {
+      top: 392px;
+      right: -82px;
+      height: 347px;
+      width: 347px;
+    }
+  }
+}
