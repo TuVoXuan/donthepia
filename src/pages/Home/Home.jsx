@@ -256,6 +256,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className={styles["socials"]}>
+        <div className={styles["socials__item"]}>
+          <Icons.Twitter />
+        </div>
+        <div className={styles["socials__item"]}>
+          <Icons.Facebook />
+        </div>
+        <div className={styles["socials__item"]}>
+          <Icons.Instagram />
+        </div>
+        <div className={styles["socials__item"]}>
+          <Icons.Youtube />
+        </div>
+      </div>
     </div>
   );
 }

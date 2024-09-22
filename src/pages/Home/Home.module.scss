@@ -2,7 +2,6 @@
 @import "../../styles/responsive.scss";
 
 .container {
-  // font-family: "Pretendard", sans-serif;
 }
 
 .introduction-banner {
@@ -920,5 +919,46 @@
         }
       }
     }
+  }
+}
+
+.socials {
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 8px;
+  position: fixed;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  padding-right: 12px;
+  display: none;
+
+  @include respond-to(sm) {
+    display: flex;
+  }
+
+  @include respond-to(lg) {
+    padding-right: 24px;
+  }
+
+  @include respond-to(xl) {
+    padding-right: 48px;
+  }
+  @include respond-to(2xl) {
+    right: calc(100vw / 2 - (1440px / 2));
+  }
+
+  &__item {
+    height: 40px;
+    width: 40px;
+    color: variables.$white-fff;
+    border: 1px solid variables.$white-fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    cursor: pointer;
   }
 }
