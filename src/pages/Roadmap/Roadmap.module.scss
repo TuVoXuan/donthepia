@@ -418,5 +418,79 @@
       height: 347px;
       width: 347px;
     }
+    @include respond-to(2xl) {
+      right: 0px;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  background-color: variables.$black-232;
+  color: variables.$white-fff;
+  padding: 0 12px;
+  padding-bottom: 25px;
+
+  @include respond-to(sm) {
+    padding: 0 24px;
+    padding-bottom: 33px;
+    gap: 70px;
+  }
+  @include respond-to(lg) {
+    padding: 0 32px;
+    padding-bottom: 40px;
+    gap: 90px;
+  }
+  @include respond-to(xl) {
+    padding: 0 48px;
+    padding-bottom: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include respond-to(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include respond-to(lg) {
+      flex-direction: row;
+      justify-content: unset;
+      gap: 120px;
+    }
+
+    @include respond-to(xl) {
+      gap: 264px;
+    }
+
+    p {
+      font-size: 15.5px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    justify-content: center;
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid variables.$white-fff;
+      cursor: pointer;
+    }
   }
 }

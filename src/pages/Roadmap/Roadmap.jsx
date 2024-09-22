@@ -237,6 +237,28 @@ export default function Roadmap() {
           /assets/images/roadmap/img-bottom-03@3x.png 3x,"
         />
       </div>
+
+      <div className={styles["footer"]}>
+        <div className={styles["footer__text-group"]}>
+          <p>Copyright 2024. Donthepia INC. All rights reserved.</p>
+          <p>Mail@donthepia.com</p>
+        </div>
+
+        <div className={styles["footer__socials"]}>
+          <div className={styles["footer__socials__item"]}>
+            <Icons.Twitter />
+          </div>
+          <div className={styles["footer__socials__item"]}>
+            <Icons.Facebook />
+          </div>
+          <div className={styles["footer__socials__item"]}>
+            <Icons.Instagram />
+          </div>
+          <div className={styles["footer__socials__item"]}>
+            <Icons.Youtube />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
