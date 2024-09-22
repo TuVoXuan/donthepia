@@ -1,0 +1,96 @@
+@use "../../../styles/variables.scss";
+@import "../../../styles/responsive.scss";
+
+.collapse-wrap {
+  &__header-wrap {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    &__prefix {
+      color: variables.$white-fff;
+      font-size: 14px;
+      padding: 16px;
+      width: fit-content;
+      line-height: 1.6;
+      @include respond-to(sm) {
+        font-size: 16px;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+      }
+      @include respond-to(xl) {
+        font-size: 20px;
+      }
+    }
+  }
+  &__header {
+    padding: 16px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 12px;
+
+    &__expand-btn {
+      cursor: pointer;
+      color: variables.$white-fff;
+      transition: all 0.3s linear;
+
+      &__icon {
+        height: 16px;
+        width: 16px;
+        padding: 4px;
+        @include respond-to(sm) {
+          height: 18px;
+          width: 18px;
+        }
+        @include respond-to(lg) {
+          height: 20px;
+          width: 20px;
+        }
+        @include respond-to(xl) {
+          height: 24px;
+          width: 24px;
+        }
+      }
+      &.expand {
+        transform: rotate(135deg);
+        color: variables.$orange-f13;
+      }
+    }
+
+    &__title {
+      font-family: "Pretendard", sans-serif;
+      color: variables.$white-fff;
+      font-size: 14px;
+      line-height: 1.6;
+      @include respond-to(sm) {
+        font-size: 16px;
+      }
+      @include respond-to(lg) {
+        font-size: 18px;
+      }
+      @include respond-to(xl) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__body {
+    grid-column-start: 2;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms ease-out;
+
+    &__content {
+      overflow: hidden;
+      font-family: "Pretendard", sans-serif;
+      color: variables.$gray-878;
+      padding: 0 16px;
+      line-height: 1.6;
+    }
+
+    &.expand {
+      grid-template-rows: 1fr;
+    }
+  }
+}
